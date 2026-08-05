@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required": [
+    "success",
+    "message"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "const": true
+    },
+    "message": {
+      "type": "string",
+      "const": "Booking cancelled"
+    }
+  },
+  "additionalProperties": false
+}

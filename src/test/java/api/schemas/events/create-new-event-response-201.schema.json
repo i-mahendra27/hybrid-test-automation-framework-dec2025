@@ -1,0 +1,99 @@
+{
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "enum": [
+        true
+      ]
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "venue": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "eventDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "price": {
+          "type": "string",
+          "pattern": "^[0-9]+$"
+        },
+        "totalSeats": {
+          "type": "integer"
+        },
+        "availableSeats": {
+          "type": "integer"
+        },
+        "imageUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "isStatic": {
+          "type": "boolean"
+        },
+        "userId": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "category",
+        "venue",
+        "city",
+        "eventDate",
+        "price",
+        "totalSeats",
+        "availableSeats",
+        "imageUrl",
+        "isStatic",
+        "userId",
+        "createdAt",
+        "updatedAt"
+      ],
+      "additionalProperties": false
+    },
+    "message": {
+      "type": "string",
+      "enum": [
+        "Event created successfully"
+      ]
+    }
+  },
+  "required": [
+    "success",
+    "data",
+    "message"
+  ],
+  "additionalProperties": false
+}

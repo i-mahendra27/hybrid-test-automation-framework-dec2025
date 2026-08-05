@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "venue": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "eventDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "price": {
+      "type": "string",
+      "pattern": "^[0-9]+$"
+    },
+    "totalSeats": {
+      "type": "integer"
+    },
+    "imageUrl": {
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "category",
+    "venue",
+    "city",
+    "eventDate",
+    "price",
+    "totalSeats",
+    "imageUrl"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "name": "UI - Element Not Found",
+    "matchedStatuses": ["failed", "broken"],
+    "traceRegex": ".*(NoSuchElementException|NoSuchFrameException|NoSuchWindowException).*"
+  },
+  {
+    "name": "UI - Wait Timeout",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": ".*(Expected condition failed|waiting for|visibility of|element to be clickable).*",
+    "traceRegex": ".*(TimeoutException|WebDriverWait).*"
+  },
+  {
+    "name": "UI - Interaction Error",
+    "matchedStatuses": ["failed", "broken"],
+    "traceRegex": ".*(ElementClickInterceptedException|ElementNotInteractableException|StaleElementReferenceException|MoveTargetOutOfBoundsException).*"
+  },
+  {
+    "name": "UI - Assertion",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*(AssertionError|expected|but was|should be|should contain|should have).*"
+  },
+  {
+    "name": "UI - Browser Driver",
+    "matchedStatuses": ["broken"],
+    "traceRegex": ".*(WebDriverException|SessionNotCreatedException|InvalidSessionIdException|NoSuchSessionException).*"
+  },
+  {
+    "name": "UI - Test Data",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": ".*(test data|account|booking|event|email|password).*"
+  },
+  {
+    "name": "UI - Screenshot Attachment",
+    "matchedStatuses": ["broken"],
+    "traceRegex": ".*(ScreenshotException|OutputType|TakesScreenshot).*"
+  },
+  {
+    "name": "UI - Framework Error",
+    "matchedStatuses": ["broken"],
+    "traceRegex": ".*(IllegalStateException|NullPointerException|IllegalArgumentException).*"
+  }
+]

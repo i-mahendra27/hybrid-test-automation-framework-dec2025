@@ -1,0 +1,48 @@
+[
+  {
+    "name": "API - Contract",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*(schema|contract|JSON|response body|request body|body should match|response should match).*"
+  },
+  {
+    "name": "API - Authentication",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": ".*(401|Unauthorized|token|credential|login).*",
+    "traceRegex": ".*(RestAssured|JsonPath).*"
+  },
+  {
+    "name": "API - Authorization",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": ".*(403|Forbidden|permission|access denied).*"
+  },
+  {
+    "name": "API - Validation",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*(400|Bad Request|validation|invalid|required field|missing field).*"
+  },
+  {
+    "name": "API - Client Error",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*(404|409|422|Not Found|Conflict|Unprocessable Entity).*"
+  },
+  {
+    "name": "API - Server Error",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": ".*(500|502|503|504|Internal Server Error|Bad Gateway|Service Unavailable|Gateway Timeout).*"
+  },
+  {
+    "name": "API - Timeout",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": ".*(API request timed out|HTTP request timed out|SocketTimeoutException|ConnectTimeoutException).*"
+  },
+  {
+    "name": "API - Test Data",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": ".*(test data|duplicate|already exists|record not found|reference code|booking id|event id).*"
+  },
+  {
+    "name": "API - Framework Error",
+    "matchedStatuses": ["broken"],
+    "traceRegex": ".*(RestAssured|JsonPath|JsonSchemaValidationException|IllegalStateException|NullPointerException).*"
+  }
+]

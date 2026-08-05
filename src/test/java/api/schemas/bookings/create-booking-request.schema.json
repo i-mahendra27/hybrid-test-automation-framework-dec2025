@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "required": [
+    "eventId",
+    "customerName",
+    "customerEmail",
+    "customerPhone",
+    "quantity"
+  ],
+  "properties": {
+    "eventId": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "customerName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "customerEmail": {
+      "type": "string",
+      "format": "email"
+    },
+    "customerPhone": {
+      "type": "string",
+      "minLength": 1
+    },
+    "quantity": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10
+    }
+  },
+  "additionalProperties": false
+}

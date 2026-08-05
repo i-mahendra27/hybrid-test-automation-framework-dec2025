@@ -1,0 +1,156 @@
+{
+  "type": "object",
+  "required": [
+    "success",
+    "data"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "const": true
+    },
+    "data": {
+      "type": "object",
+      "required": [
+        "id",
+        "eventId",
+        "customerName",
+        "customerEmail",
+        "customerPhone",
+        "quantity",
+        "totalPrice",
+        "status",
+        "bookingRef",
+        "createdAt",
+        "updatedAt",
+        "event"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "eventId": {
+          "type": "integer"
+        },
+        "userId": {
+          "type": "integer"
+        },
+        "customerName": {
+          "type": "string"
+        },
+        "customerEmail": {
+          "type": "string"
+        },
+        "customerPhone": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer"
+        },
+        "totalPrice": {
+          "type": [
+            "number",
+            "string"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "confirmed",
+            "cancelled"
+          ]
+        },
+        "bookingRef": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "event": {
+          "type": "object",
+          "required": [
+            "id",
+            "title",
+            "description",
+            "category",
+            "venue",
+            "city",
+            "eventDate",
+            "price",
+            "totalSeats",
+            "availableSeats",
+            "createdAt",
+            "updatedAt"
+          ],
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            },
+            "venue": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "eventDate": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "price": {
+              "type": [
+                "number",
+                "string"
+              ]
+            },
+            "totalSeats": {
+              "type": "integer"
+            },
+            "availableSeats": {
+              "type": "integer"
+            },
+            "imageUrl": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "isStatic": {
+              "type": "boolean"
+            },
+            "userId": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "updatedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

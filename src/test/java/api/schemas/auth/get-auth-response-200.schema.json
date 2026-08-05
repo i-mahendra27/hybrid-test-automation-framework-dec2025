@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "required": ["success", "user"],
+  "properties": {
+    "success": { "type": "boolean", "const": true },
+    "user": {
+      "type": "object",
+      "required": ["userId", "email"],
+      "properties": {
+        "userId": { "type": "integer" },
+        "email": { "type": "string" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

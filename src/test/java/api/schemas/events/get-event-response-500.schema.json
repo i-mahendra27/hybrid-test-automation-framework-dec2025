@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "enum": [false]
+    },
+    "error": {
+      "type": "string",
+      "enum": ["Resource not found"]
+    }
+  },
+  "additionalProperties": false
+}

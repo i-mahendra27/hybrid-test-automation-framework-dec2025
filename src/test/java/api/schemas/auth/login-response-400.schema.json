@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "const": false
+    },
+    "error": {
+      "type": "string",
+      "example": "Invalid credentials"
+    },
+    "details": {
+      "type": "array"
+    }
+  },
+  "required": ["success", "error"],
+  "additionalProperties": false
+}

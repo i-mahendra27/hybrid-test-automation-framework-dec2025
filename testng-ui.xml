@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Cucumber Automation Test Suite" verbose="1" parallel="false" thread-count="1">
+    <!-- If you want to change mode to open browser, just change this value to false -->
+    <parameter name="HEADLESS" value="true"/>
+    <parameter name="BROWSER" value="chrome"/>
+    <!-- Environment: dev/sit for development testing -->
+    <parameter name="env" value="sit"/>
+
+    <listeners>
+        <listener class-name="listeners.AllureReportListener"/>
+        <listener class-name="listeners.TestNgParameterListener"/>
+        <listener class-name="listeners.AnnotationTransformerListener"/>
+        <listener class-name="listeners.EmailReportListener"/>
+    </listeners>
+
+    <test name="UI Tests">
+        <classes>
+            <class name="runner.ui.TestRunnerUI"/>
+        </classes>
+    </test>
+</suite>

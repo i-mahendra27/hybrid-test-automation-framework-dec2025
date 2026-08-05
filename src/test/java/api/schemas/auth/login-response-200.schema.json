@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "const": true
+    },
+    "token": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+$"
+    },
+    "user": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        }
+      },
+      "required": ["id", "email"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["success", "token", "user"],
+  "additionalProperties": false
+}
