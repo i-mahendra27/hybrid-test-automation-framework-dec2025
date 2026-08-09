@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import utils.LogUtils;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Resolver for element finding strategies.
@@ -48,19 +49,12 @@ public class ElementResolver {
     }
 
     public void switchStrategy(PlatformType platformType) {
-        switch (platformType) {
-            case WEB:
-                currentStrategy = new WebElementFinderStrategy();
-                currentPlatform = PlatformType.WEB;
-                LogUtils.info("Element strategy switched to WEB");
-                break;
-            case MOBILE:
-                currentStrategy = new MobileElementFinderStrategy();
-                currentPlatform = PlatformType.MOBILE;
-                LogUtils.info("Element strategy switched to MOBILE");
-                break;
-            default:
-                throw new IllegalArgumentException("Unknown platform type: " + platformType);
+        if (Objects.requireNonNull(platformType) == PlatformType.WEB) {
+            currentStrategy = new WebElementFinderStrategy();
+            currentPlatform = PlatformType.WEB;
+            LogUtils.info("Element strategy switched to WEB");
+        } else {
+            throw new IllegalArgumentException("Unknown platform type: " + platformType);
         }
     }
 

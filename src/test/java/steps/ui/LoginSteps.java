@@ -4,7 +4,6 @@ import hooks.TestContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import pages.LoginPage;
 import pages.dto.CredentialsDataObject;
 
@@ -19,11 +18,6 @@ public class LoginSteps {
     public LoginSteps(TestContext testContext) {
         this.testContext = testContext;
         this.loginPage = new LoginPage();
-    }
-
-    @When("I click {string} button")
-    public void iClickButton(String buttonName) {
-        ButtonDispatcher.clickButton(buttonName);
     }
 
     @And("I login with registered credentials")
