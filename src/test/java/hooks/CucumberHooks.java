@@ -127,12 +127,19 @@ public class CucumberHooks {
     }
 
     private CategoryType detectCategoryType(Scenario scenario) {
-        var tags = scenario.getSourceTagNames();
-        if (tags.contains(SIT_TAG)) return CategoryType.SIT;
-        if (tags.contains(STAGING_TAG)) return CategoryType.STAGING;
-        if (tags.contains(SANITY_TAG)) return CategoryType.SANITY;
-        if (tags.contains(UAT_TAG)) return CategoryType.UAT;
-        if (tags.contains(PRODUCTION_TAG)) return CategoryType.PRODUCTION;
+        // Use the running environment from ConfigManager, not feature file tags
+        // Feature files may have multiple tags, but we want the CURRENT execution env
+        String environment = ConfigManager.getEnvironment();
+        if (environment == null) {
+            return CategoryType.SANITY; // default fallback
+        }
+
+        environment = environment.toLowerCase();
+        if (environment.contains("sit")) return CategoryType.SIT;
+        if (environment.contains("staging")) return CategoryType.STAGING;
+        if (environment.contains("sanity")) return CategoryType.SANITY;
+        if (environment.contains("uat")) return CategoryType.UAT;
+        if (environment.contains("prod")) return CategoryType.PRODUCTION;
         return CategoryType.SANITY; // default fallback
     }
 

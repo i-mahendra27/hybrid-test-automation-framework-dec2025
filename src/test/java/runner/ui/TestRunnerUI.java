@@ -9,8 +9,8 @@ import org.testng.annotations.Parameters;
 
 @CucumberOptions(
         features = "src/test/java/features/UI",
-        glue = {"steps", "hooks"},
-        tags = "", // Dynamic - configured in @BeforeClass based on TEST_SUITE
+        glue = {"steps", "steps.ui", "hooks"},
+        tags = "",
         monochrome = true,
         plugin = {
                 "pretty",

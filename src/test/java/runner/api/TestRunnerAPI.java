@@ -8,8 +8,8 @@ import org.testng.annotations.BeforeClass;
 
 @CucumberOptions(
         features = "src/test/java/features/API",
-        glue = {"steps", "hooks"},
-        tags = "", // Dynamic - configured in @BeforeClass based on TEST_SUITE
+        glue = {"steps", "steps.api", "hooks"},
+        tags = "",
         monochrome = true,
         plugin = {
                 "pretty",

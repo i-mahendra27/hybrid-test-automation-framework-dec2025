@@ -6,9 +6,6 @@ import utils.LogUtils;
 
 import java.util.List;
 
-/**
- * Web implementation using Selenium WebDriver
- */
 public class WebElementFinderStrategy implements ElementFinderStrategy {
 
     @Override

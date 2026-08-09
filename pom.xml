@@ -97,11 +97,11 @@
             </properties>
         </profile>
 
-        <!-- SANITY uses staging env -->
+        <!-- SANITY -->
         <profile>
             <id>sanity-ui</id>
             <properties>
-                <env>staging</env>
+                <env>sanity</env>
                 <TEST_SUITE>Sanity Suite</TEST_SUITE>
                 <suiteXmlFile>testng-ui.xml</suiteXmlFile>
             </properties>
@@ -109,7 +109,7 @@
         <profile>
             <id>sanity-api</id>
             <properties>
-                <env>staging</env>
+                <env>sanity</env>
                 <TEST_SUITE>Sanity Suite</TEST_SUITE>
                 <suiteXmlFile>testng-api.xml</suiteXmlFile>
             </properties>
@@ -117,17 +117,17 @@
         <profile>
             <id>sanity-all</id>
             <properties>
-                <env>staging</env>
+                <env>sanity</env>
                 <TEST_SUITE>Sanity Suite</TEST_SUITE>
                 <suiteXmlFile>testng-all.xml</suiteXmlFile>
             </properties>
         </profile>
 
-        <!-- UAT uses staging env -->
+        <!-- UAT -->
         <profile>
             <id>uat-ui</id>
             <properties>
-                <env>staging</env>
+                <env>uat</env>
                 <TEST_SUITE>UAT Suite</TEST_SUITE>
                 <suiteXmlFile>testng-ui.xml</suiteXmlFile>
             </properties>
@@ -135,7 +135,7 @@
         <profile>
             <id>uat-api</id>
             <properties>
-                <env>staging</env>
+                <env>uat</env>
                 <TEST_SUITE>UAT Suite</TEST_SUITE>
                 <suiteXmlFile>testng-api.xml</suiteXmlFile>
             </properties>
@@ -203,6 +203,8 @@
     </profiles>
 
     <properties>
+        <!-- Default environment (override with -P<profile> or -Denv=) -->
+        <env>dev</env>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
