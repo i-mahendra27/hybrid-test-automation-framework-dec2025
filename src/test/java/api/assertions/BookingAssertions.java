@@ -123,6 +123,21 @@ public class BookingAssertions {
         }
     }
 
+    public void assertGetBookingByIdResponseData(Response response) {
+        Assertions.assertThat(response.jsonPath().getInt("data.id"))
+                .as("Booking data should contain id")
+                .isNotNull()
+                .isPositive();
+
+        Assertions.assertThat(response.jsonPath().getString("data.bookingRef"))
+                .as("Booking data should contain booking reference")
+                .isNotBlank();
+
+        Assertions.assertThat(response.jsonPath().getString("data.status"))
+                .as("Booking data should contain status")
+                .isNotBlank();
+    }
+
     private void assertCancelBookingResponseSchema(Response response, int statusCode) {
         switch (statusCode) {
             case 200 -> assertResponseMatchesSchema(response, CANCEL_BOOKING_RESPONSE_200_SCHEMA);
