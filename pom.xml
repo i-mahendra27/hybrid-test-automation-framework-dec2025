@@ -423,6 +423,12 @@
             <artifactId>cucumber-testng</artifactId>
         </dependency>
 
+        <!-- Cucumber PicoContainer: provides zero-arg constructor via DI for step classes -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
         <dependency>
             <groupId>org.aspectj</groupId>

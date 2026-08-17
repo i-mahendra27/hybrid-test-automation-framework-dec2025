@@ -157,7 +157,7 @@ public class CucumberReportListener implements ConcurrentEventListener {
                                 Files.write(Paths.get(screenshotPath), screenshot);
                                 LogUtils.info("    Screenshot saved to: " + screenshotPath);
 
-                                String relativeScreenshotPath = "../screenshots/" + screenshotName;
+                                String relativeScreenshotPath = "../ExportData/Images/" + screenshotName;
 
                                 // Log to ExtentReport with screenshot at the failed step
                                 ExtentTestManager.getTest().fail("Step failed: " + stepText)

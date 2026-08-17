@@ -276,13 +276,13 @@ public class MyBookingPage extends BasePage<MyBookingPage> {
         clickElement(By.xpath(checkEligibleOrNoEligibleTextButton));
     }
 
-    // Dynamic button map - NOTE: "cancel booking" and "yes, cancel it" need testContext access
-    // Use BookingSteps directly for those instead
+    // Dynamic button map
     private static final Map<String, Consumer<MyBookingPage>> BUTTON_ACTIONS = Map.of(
             "confirm booking", MyBookingPage::clickConfirmBookingButton,
             "view details", MyBookingPage::clickViewDetailsButton,
             "clear all bookings", MyBookingPage::clickClearAllBookingsTextButton,
-            "check eligibility for refund?", MyBookingPage::clickCheckEligible
+            "check eligibility for refund?", MyBookingPage::clickCheckEligible,
+            "cancel booking", MyBookingPage::clickCancelButton
     );
 
     public static Map<String, Consumer<MyBookingPage>> getButtonActions() {
